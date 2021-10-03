@@ -15,8 +15,7 @@ export default async function handler(req, res) {
     width: 1920,
     height: 1080,
   })
-  const content = await page.$('body')
-  const imageBuffer = await content.screenshot({ omitBackground: true })
+  const imageBuffer = await page.screenshot({ omitBackground: true })
   await page.close()
   await browser.close()
   res.setHeader(
